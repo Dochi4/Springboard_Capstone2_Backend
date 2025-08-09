@@ -134,12 +134,10 @@ To run the backend locally on your machine, follow these steps:
   -npm install
 
 3. **Create a .env file in the project root and add necessary variables like**
-   SECRET_KEY=your_secret_key
-DATABASE_URL=your_database_connection_string
-PORT=3001
-
-GOOGLE_BOOKS_API_KEY=your_google_books_api_key
-GOOGLE_BOOKS_API_URL=your_google_books_api_url
+   -SECRET_KEY=your_secret_key
+   -DATABASE_URL=your_database_connection_string PORT=3001
+   -GOOGLE_BOOKS_API_KEY=your_google_books_api_key
+   -GOOGLE_BOOKS_API_URL=your_google_books_api_url
 
 # Gemini From Gemini Studio
 OPRO_GEMINI2_KEY=your_gemini_key

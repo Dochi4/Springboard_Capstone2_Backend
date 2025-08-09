@@ -131,7 +131,7 @@ To run the backend locally on your machine, follow these steps:
    cd Springboard_Capstone2_Backend
 
 2. **Install dependencies**
-  -npm install
+  - npm install
 
 3. **Create a .env file in the project root and add necessary variables like**
    - SECRET_KEY=your_secret_key

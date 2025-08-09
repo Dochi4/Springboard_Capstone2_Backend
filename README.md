@@ -97,19 +97,16 @@ Additionally, since both Gemini and Google Books are part of the same company, i
 
 ---
 
-### Admin-only Routes
+### User Routes
 
 - **POST /**  
-  Add a new user (admin only). Request body includes user data; returns created user and auth token.
-
-- **GET /**  
-  List all users (admin only).
+  Add a new user . Request body includes user data; returns created user and auth token.
 
 - **GET /[username]**  
-  Get user details (admin or same user only).
+  Get user details (same user only).
 
 - **PATCH /[username]**  
-  Update user details (admin or same user only).
+  Update user details (same user only).
 
 ---
 

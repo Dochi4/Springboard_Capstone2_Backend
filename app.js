@@ -38,15 +38,7 @@ app.use("/savebooks", saveBooksRoutes);
 // Serve React static files:
 app.use(express.static(path.join(__dirname, "public")));
 
-// All other GET requests serve React index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
 
-/** Handle 404 errors -- this matches everything */
-app.use(function (req, res, next) {
-  return next(new NotFoundError());
-});
 
 /** Generic error handler; anything unhandled goes here. */
 app.use(function (err, req, res, next) {

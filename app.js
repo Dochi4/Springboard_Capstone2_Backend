@@ -13,6 +13,7 @@ const usersRoutes = require("./routes/users");
 const geminiRoutes = require("./routes/geminisearch");
 const searchsRoutes = require("./routes/search");
 const saveBooksRoutes = require("./routes/savebooks");
+const path = require("path");
 
 const morgan = require("morgan");
 
@@ -33,6 +34,14 @@ app.use("/users", usersRoutes);
 app.use("/recommendation", geminiRoutes);
 app.use("/search", searchsRoutes);
 app.use("/savebooks", saveBooksRoutes);
+
+// Serve React static files:
+app.use(express.static(path.join(__dirname, "public")));
+
+// All other GET requests serve React index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {

@@ -10,7 +10,7 @@ const router = new express.Router();
 // GET /search?query=harry+potter
 router.get("/", async function (req, res, next) {
   try {
-    const { query, maxResults = 20 } = req.query;
+    const { query, maxResults = 10 } = req.query;
 
     if (!query) throw new BadRequestError("Missing query parameter");
 

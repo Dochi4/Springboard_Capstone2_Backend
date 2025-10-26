@@ -71,10 +71,10 @@ class GeminiSearch {
            You are a book recommendation assistant. You must return ONLY a valid JSON object. Do not explain your process, reasoning, or thought steps. Do not include markdown, commentary, or plain text.
 
             INSTRUCTION:
-            - Based on the user's description, list EXACTLY 15 books.
+            - Based on the user's description, list EXACTLY 10 books.
             - Each book should be returned as a JSON object with two keys: "title" and "reason".
             - The "reason" must explicitly connect the given description explaining why the suggested book is similar to the given book. All elements such as plot, characters, and setting should be taken into account. Focus on related to the given description.
-            - The final JSON must contain one key: "Recommendations", mapping to an array of 15 such objects.
+            - The final JSON must contain one key: "Recommendations", mapping to an array of 10 such objects.
             - DO NOT return markdown, extra commentary, or anything outside the JSON.
             - Format exactly like this:
 
@@ -85,7 +85,7 @@ class GeminiSearch {
                         "reason": "A brief 4–6 sentence reason for the recommendation."
                       },
                   ...
-                  (15 total items)
+                  (10 total items)
                 ]
               }
 
@@ -112,7 +112,7 @@ class GeminiSearch {
             {
               role: "user",
               content: `
-              List 15 books similar based on this description: ${userDescript}. For each book, provide a short reason (max 6 sentences) explaining why it's a good recommendation. With Out Duplicate Books. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.
+              List 10 books similar based on this description: ${userDescript}. For each book, provide a short reason (max 6 sentences) explaining why it's a good recommendation. With Out Duplicate Books. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.
               Return ONLY valid JSON in this exact format:
 {
   "Recommendations": [
@@ -181,11 +181,11 @@ Do not add any other text, commentary, or markdown.
 
             INSTRUCTION:
             - The user will provide a text description of a book cover's visual elements, aesthetic, or common imagery.
-            - Based on this textual description of a book cover, list EXACTLY 15 books.
+            - Based on this textual description of a book cover, list EXACTLY 10 books.
             - Each book should be returned as a JSON object with two keys: "title" and "reason".
             - The "reason" must explicitly connect the recommended book to the *visual elements or aesthetic described in the user's input*, explaining why its cover (or the common imagery associated with it) would match the description. Do NOT explain the plot.
             Match the visual description from the input.
-            - The final JSON must contain one key: "Recommendations", mapping to an array of 15 such objects.
+            - The final JSON must contain one key: "Recommendations", mapping to an array of 10 such objects.
             - DO NOT return markdown, extra commentary, or anything outside the JSON.
             - Format exactly like this:
 
@@ -196,7 +196,7 @@ Do not add any other text, commentary, or markdown.
                         "reason": "A brief 4-6 sentence reason for the recommendation, focusing on how its cover (or the book's visual representation) matches the description."
                       },
                       ...
-                      (15 total items)
+                      (10 total items)
                 ]
               }
 
@@ -222,7 +222,7 @@ Do not add any other text, commentary, or markdown.
             {
               role: "user",
               content: `
-              List 15 books with covers similar to this description: ${coverDescript}. For each book, provide a short reason (max 6 sentences) explaining why its cover visually matches the description. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.Focus heavely on the look of the cover. Focus on how  the cover look on the google books website.
+              List 10 books with covers similar to this description: ${coverDescript}. For each book, provide a short reason (max 6 sentences) explaining why its cover visually matches the description. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.Focus heavely on the look of the cover. Focus on how  the cover look on the google books website.
               `,
             },
           ],
@@ -284,10 +284,10 @@ Do not add any other text, commentary, or markdown.
 
             INSTRUCTION:
             - The user will provide a given book description and a book title.
-            - Based on this given book description and how the suggested book is similar, list EXACTLY 15 books.
+            - Based on this given book description and how the suggested book is similar, list EXACTLY 10 books.
             - Each book should be returned as a JSON object with two keys: "title" and "reason".
             - The "reason" must explicitly connect the given book description explaining why the suggested book is similar to the given book. All elements such as plot, characters, and setting should be taken into account. Focus on related to the given book description.
-            - The final JSON must contain one key: "Recommendations", mapping to an array of 15 such objects.
+            - The final JSON must contain one key: "Recommendations", mapping to an array of 10 such objects.
             - DO NOT return markdown, extra commentary, or anything outside the JSON.
             - Format exactly like this:
 
@@ -299,7 +299,7 @@ Do not add any other text, commentary, or markdown.
                         "reason": "A brief 4–6sentence reason for the recommendation."
                       },
                   ...
-                  (15 total items)
+                  (10 total items)
                 ]
               }
               }
@@ -332,7 +332,7 @@ Do not add any other text, commentary, or markdown.
             {
               role: "user",
               content: `
-              List 15 books that are similar ${book.title} to this description: ${book.description}. For each book, provide a short reason (max 6 sentences) explaining it's a good recommendation. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.
+              List 10 books that are similar ${book.title} to this description: ${book.description}. For each book, provide a short reason (max 6 sentences) explaining it's a good recommendation. Return the result as a JSON object with a key 'Recommendations' containing a list of objects.
               `,
             },
           ],
